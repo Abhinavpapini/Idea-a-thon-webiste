@@ -1,0 +1,257 @@
+/* Ideathon Custom Styles and Animations */
+
+/* Custom Animations */
+@keyframes bounce-in {
+  0% { 
+    opacity: 0; 
+    transform: translateY(30px) scale(0.9); 
+  }
+  50% { 
+    opacity: 0.8; 
+    transform: translateY(-10px) scale(1.05); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
+}
+
+@keyframes fade-in {
+  0% { 
+    opacity: 0; 
+  }
+  100% { 
+    opacity: 1; 
+  }
+}
+
+@keyframes slide-up {
+  0% { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes zoom-in {
+  0% { 
+    opacity: 0; 
+    transform: scale(0.8); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: scale(1); 
+  }
+}
+
+@keyframes scale-in {
+  0% { 
+    opacity: 0; 
+    transform: scale(0.5); 
+  }
+  50% { 
+    opacity: 0.7; 
+    transform: scale(1.1); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: scale(1); 
+  }
+}
+
+@keyframes slide-in-left {
+  0% { 
+    opacity: 0; 
+    transform: translateX(-50px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateX(0); 
+  }
+}
+
+@keyframes flip-in {
+  0% { 
+    opacity: 0; 
+    transform: rotateY(90deg); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: rotateY(0); 
+  }
+}
+
+@keyframes rotate-in {
+  0% { 
+    opacity: 0; 
+    transform: rotate(12deg) scale(0.8); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: rotate(0) scale(1); 
+  }
+}
+
+@keyframes space-particle {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+    opacity: 0.1; 
+  }
+  50% { 
+    transform: translateY(-20px) rotate(180deg); 
+    opacity: 0.3; 
+  }
+}
+
+/* Animation Classes */
+.animate-bounce-in {
+  animation: bounce-in 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out forwards;
+}
+
+.animate-zoom-in {
+  animation: zoom-in 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.8s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.8s ease-out forwards;
+}
+
+.animate-flip-in {
+  animation: flip-in 0.8s ease-out forwards;
+}
+
+.animate-rotate-in {
+  animation: rotate-in 0.8s ease-out forwards;
+}
+
+/* Animation Delays */
+.animate-delay-100 { animation-delay: 100ms; }
+.animate-delay-200 { animation-delay: 200ms; }
+.animate-delay-300 { animation-delay: 300ms; }
+.animate-delay-400 { animation-delay: 400ms; }
+.animate-delay-500 { animation-delay: 500ms; }
+.animate-delay-600 { animation-delay: 600ms; }
+.animate-delay-700 { animation-delay: 700ms; }
+.animate-delay-800 { animation-delay: 800ms; }
+.animate-delay-900 { animation-delay: 900ms; }
+.animate-delay-1000 { animation-delay: 1000ms; }
+
+/* Space Particles */
+.space-particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: space-particle 6s linear infinite;
+}
+
+/* Green Glow Effects */
+.green-glow {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+.green-glow-intense {
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.5), 0 0 60px rgba(16, 185, 129, 0.3);
+}
+
+/* Hover Effects */
+.green-glow:hover {
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.4);
+}
+
+.green-glow-intense:hover {
+  box-shadow: 0 0 35px rgba(16, 185, 129, 0.6), 0 0 70px rgba(16, 185, 129, 0.4);
+}
+
+/* Custom Utility Classes */
+.rotateY-90 {
+  transform: rotateY(90deg);
+}
+
+/* Responsive Design Helpers */
+@media (max-width: 768px) {
+  .animate-bounce-in,
+  .animate-fade-in,
+  .animate-slide-up,
+  .animate-zoom-in,
+  .animate-scale-in,
+  .animate-slide-in-left,
+  .animate-flip-in,
+  .animate-rotate-in {
+    animation-duration: 0.6s;
+  }
+}
+
+/* Ensure animations work on all browsers */
+* {
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #10b981;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #059669;
+}
+
+/* Prevent text selection on animated elements */
+.animate-bounce-in,
+.animate-fade-in,
+.animate-slide-up,
+.animate-zoom-in,
+.animate-scale-in,
+.animate-slide-in-left,
+.animate-flip-in,
+.animate-rotate-in {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Improve performance for animations */
+.animate-bounce-in,
+.animate-fade-in,
+.animate-slide-up,
+.animate-zoom-in,
+.animate-scale-in,
+.animate-slide-in-left,
+.animate-flip-in,
+.animate-rotate-in {
+  will-change: transform, opacity;
+}
