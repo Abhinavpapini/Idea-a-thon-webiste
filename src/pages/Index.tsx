@@ -127,7 +127,7 @@ const IdeathonLoader = () => {
             showText ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             <h1 className="text-5xl font-bold text-green-400 mb-4 animate-pulse">
-              Ideathon 2K25
+              Idea-A-Thon
             </h1>
             <p className="text-green-300 text-xl font-medium animate-pulse">
               Where ideas take flight and innovation begins
