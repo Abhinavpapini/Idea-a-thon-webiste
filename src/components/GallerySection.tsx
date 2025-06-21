@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
@@ -8,10 +7,10 @@ const GallerySection = () => {
   const { ref: gridRef, isInView: gridInView } = useScrollAnimation(0.2);
 
   const images = [
-    { id: 1, alt: "Participant presentation 1" },
-    { id: 2, alt: "Participant presentation 2" },
-    { id: 3, alt: "Participant presentation 3" },
-    { id: 4, alt: "Participant presentation 4" }
+    { id: 1, src: "/images/gallery/presentation1.jpg", alt: "Participant presentation 1" },
+    { id: 2, src: "/images/gallery/presentation2.jpg", alt: "Participant presentation 2" },
+    { id: 3, src: "/images/gallery/presentation3.jpg", alt: "Participant presentation 3" },
+    { id: 4, src: "/images/gallery/presentation4.jpg", alt: "Participant presentation 4" }
   ];
 
   return (
@@ -36,20 +35,24 @@ const GallerySection = () => {
 
         <div 
           ref={gridRef}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto"
         >
           {images.map((image, index) => (
             <Card 
               key={image.id}
-              className={`bg-gradient-to-br from-green-500/10 to-emerald-600/10 border-green-400/30 backdrop-blur-sm hover:border-green-400/50 transition-all duration-700 group hover:scale-105 cursor-pointer overflow-hidden ${
+              className={`bg-gradient-to-br from-green-500/10 to-emerald-600/10 border-green-400/30 backdrop-blur-sm hover:border-green-400/50 transition-all duration-700 group hover:scale-105 cursor-pointer overflow-hidden shadow-lg ${
                 gridInView ? `animate-flip-in animate-delay-${index * 150 + 200}` : 'opacity-0 rotateY-90'
               }`}
             >
               <CardContent className="p-0">
-                <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center text-green-400 group-hover:text-green-300 transition-colors">
-                  <div className="text-center">
-                    <div className="text-4xl mb-2">🎯</div>
-                    <p className="text-sm">Presentation {image.id}</p>
+                <div className="aspect-[16/9] overflow-hidden">
+                  <img 
+                    src={image.src} 
+                    alt={image.alt} 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <p className="text-white font-medium">{image.alt}</p>
                   </div>
                 </div>
               </CardContent>
